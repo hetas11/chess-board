@@ -21,6 +21,7 @@ class ChessBoardApplicationTests {
 	@Test
 	public void testKingPiece() {
 
+
 		String[] rows = new String[]{"A", "B", "C", "D", "E", "F", "G", "H"};
 		String[] columns = new String[] {"1","2","3","4","5","6","7","8"};
 

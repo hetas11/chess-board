@@ -27,23 +27,10 @@ public class ChessBoardApplication {
 		String position = input.split(SimpleConstants.DELIMITER)[1].trim();
 		System.out.println("Piece :" +piece +"\n" +"Position :" +position);
 
-		String[] rows = new String[]{"A", "B", "C", "D", "E", "F", "G", "H"};
-		String[] columns = new String[] {"1","2","3","4","5","6","7","8"};
+		Game game = new Game();
+		String response = game.gamePiece(piece,position);
+		System.out.println("Possible Moves:" +response);
 
-		int rowsIndex = Arrays.asList(rows).indexOf(String.valueOf(position.charAt(0)));
-		int colIndex = Arrays.asList(columns).indexOf(String.valueOf(position.charAt(1)));
-
-		if(piece.equalsIgnoreCase(SimpleConstants.PIECE_PAWN)) {
-			Pawn pawnMovement = new Pawn();
-			System.out.println("Possible moves for Pawn: "
-					+ pawnMovement.possibleMoves(rows,columns,rowsIndex,colIndex));
-		} else if(piece.equalsIgnoreCase(SimpleConstants.PIECE_KING)){
-			King kingMovement = new King();
-			System.out.println("Possible moves for King: "
-					+ kingMovement.possibleMoves(rows,columns,rowsIndex,colIndex));
-		} else {
-			System.out.println("Incorrect piece entered:" +piece);
-		}
 	}
 
 }
